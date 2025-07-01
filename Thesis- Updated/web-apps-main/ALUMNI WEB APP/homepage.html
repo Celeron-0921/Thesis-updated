@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME | TUP - Cavite</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Albert+Sans:wght@400;500;700&family=Sanchez&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+  <div class="homepage">
+    <img class="Navbar" src="Navbar.png" />
+    <div class="Line1"></div>
+    <div class="Line2"></div>
+
+    <div class="career-button slide-in">
+      <div class="content"><div class="state-layer"><div class="hover-underline1">CAREER</div></div></div>
+    </div>
+    <div class="event-button slide-in">
+      <div class="content"><div class="state-layer"><div class="hover-underline1">EVENT REGISTRATION</div></div></div>
+    </div>
+    <div class="id-button slide-in">
+      <div class="content"><div class="state-layer"><div class="hover-underline1">ID REQUEST</div></div></div>
+    </div>
+    <div class="gallery-button slide-in">
+      <div class="content"><div class="state-layer"><div class="hover-underline1">GALLERY</div></div></div>
+    </div>
+
+    <div id="loader-wrapper">
+      <div class="loader-content">
+          <span class="loading-span">T</span>
+          <span class="loading-span2">ECHNOLOGICAL</span>
+          <span class="loading-span">U</span>
+          <span class="loading-span2">NIVERSITY OF THE</span>
+          <span class="loading-span">P</span>
+          <span class="loading-span2">HILIPPINES - </span>
+          <span class="loading-span">C</span>
+          <span class="loading-span2">AVITE</span>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="footer-text">LOADING PLEASE WAIT</div>
+      </div>
+    </div>
+
+
+    <a href="homepage.html">
+      <img class="Logo" src="Logo.png" alt="University Logo" />
+    </a>
+
+    <div class="a-l-u-m-n-i slide-in">
+      <span class="a-l-u-m-n-i-span">A</span>
+      <span class="a-l-u-m-n-i-span2">l u m n i</span>
+    </div>
+
+    <div class="technological-university-of-the-philippines-cavite">
+      TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES – CAVITE
+    </div>
+
+    <!-- LOGIN BUTTON -->
+    <button class="login-button slide-in hover-underline3" id="open-login-modal">LOG IN</button>
+    <!-- LOG IN MODAL -->
+    <div id="login-modal" class="login-modal" style="display: none;">
+      <div class="login-modal-content">
+        <!-- Navbar and Logo -->
+        <div class="navbar1"></div>
+        <img class="Logo2" src="Logo2.png" alt="TUPC Logo" />
+        <!-- LOGIN TITLE -->
+        <div class="login-selection">
+          <span class="login-selection-span">L</span>
+          <span class="login-selection-span2">OG-IN</span>
+        </div>
+        <!-- LOGIN FORM -->
+        <form id="login-form">
+          <input
+            type="text"
+            id="login-username"
+            class="login-input1"
+            placeholder="Enter Username"
+            required
+          />
+          <input
+            type="password"
+            id="login-password"
+            class="login-input2"
+            placeholder="Enter Password"
+            required
+          />
+          <button type="submit" class="login-submit">Login</button>
+        </form>
+        <!-- FORGOT PASSWORD LINK -->
+        <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Facebook Page Plugin -->
+    <div class="fb-wrapper">
+    <div id="fb-root"></div>
+    
+    <div class="fb-page"
+          data-href="https://www.facebook.com/TUPCAA"
+          data-tabs="timeline"
+          data-width="340"
+          data-height="500"
+          data-small-header="false"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true">
+      </div>
+    </div>
+    </div>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container zoom-in">
+      <img class="slideshow-image" src="Grad1.png" alt="Grad 1" />
+      <img class="slideshow-image" src="Grad2.png" alt="Grad 2" />
+      <img class="slideshow-image" src="Grad3.png" alt="Grad 3" />
+      <img class="slideshow-image" src="Grad4.png" alt="Grad 4" />
+      <img class="slideshow-image" src="Grad5.png" alt="Grad 5" />
+      <img class="slideshow-image" src="Grad6.png" alt="Grad 6" />
+      <img class="slideshow-image" src="Grad7.png" alt="Grad 7" />
+      <img class="slideshow-image" src="Grad8.png" alt="Grad 8" />
+    </div>
+
+    <div class="commencement-description zoom-in">
+      <h2 class="school-name">Technological University of the Philippines - Cavite</h2>
+      <h3 class="event-title">40th <span>COMMENCEMENT EXERCISE</span></h3>
+      <p class="description">
+        Here are some snaps from the 40th Commencement Exercise at the Philippine International Convention Center on July 31, 2024.
+        See the magical moments of every TUPCians who reached the end of their college journey.
+        <br><br>
+        <strong>Photos by:</strong> Photo X Media<br>
+        <strong>Words by:</strong> Karen Pet Pabrowada
+      </p>
+    </div>
+  </div>
+
+  <!-- Visitor Counter -->
+  <div class="visitor-counter">No. OF SITE VISITOR: <span id="visitor-count">Loading...</span>
+  </div>
+
+  <!-- Contact Section -->
+    <div class="contact-section">
+      </a>
+    </div>
+    
+      <!-- Registration Button -->
+    <div class="registration-button slide-in">
+      <div class="content"><div class="state-layer">
+        <div class="hover-underline2">REGISTRATION</div></div></div>
+    </div>
+
+  <!-- Registration Modal -->
+    <div id="registration-modal" class="registration-modal" style="display: none;">
+      <div class="registration-choices">
+        <div class="navbar"></div>
+        <img class="Logo2" src="Logo2.png" alt="TUPC Logo" />
+        <div class="registration-selection">
+          <span class="registration-selection-span">R</span>
+          <span class="registration-selection-span2">EGISTRATION</span>
+          <span class="registration-selection-span">S</span>
+          <span class="registration-selection-span2">ELECTION</span>
+        </div>
+        <span class="close-registration" id="close-registration-modal">&times;</span>
+        <div class="Line1-1"></div>
+        <div class="registration-selection2">
+          <a href="alumni-registration.html" class="select">
+            <div class="value">ALUMNI REGISTRATION</div>
+          </a>
+          <a href="employer-registration.html" class="select">
+            <div class="value">EMPLOYER REGISTRATION</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  <!-- External JavaScript -->
+  <script src="Homeslideshow.js"></script>
+
+  <!-- Modal Script -->
+<script>
+  const modal = document.getElementById("registration-modal");
+  const closeRegistration = document.getElementById("close-registration-modal");
+  const regButton = document.querySelector(".registration-button");
+
+  regButton.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeRegistration.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const countEl = document.getElementById("visitor-count");
+
+    fetch("https://api.countapi.xyz/hit/tupcavite.edu.ph/homepage")
+      .then((res) => res.json())
+      .then((data) => {
+        countEl.textContent = data.value;
+      })
+      .catch((err) => {
+        console.error("Error fetching visitor count:", err);
+        countEl.textContent = "N/A";
+      });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactSection = document.querySelector(".contact-section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            contactSection.classList.add("slide-up");
+            contactSection.classList.remove("slide-down");
+          } else {
+            contactSection.classList.remove("slide-up");
+            contactSection.classList.add("slide-down");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(contactSection);
+  });
+
+  const openLogin = document.getElementById("open-login-modal");
+  const loginModal = document.getElementById("login-modal");
+
+  openLogin.addEventListener("click", () => {
+    loginModal.style.display = "flex";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === loginModal) {
+      loginModal.style.display = "none";
+    }
+  });
+
+  // ✅ Role-based Login Script
+  const loginForm = document.getElementById("login-form");
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("login-username").value.trim();
+    const password = document.getElementById("login-password").value.trim();
+
+    if (!username || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+
+    fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "Login successful") {
+          const role = data.user.role;
+
+          if (role === "admin") {
+            window.location.href = "admin-homepage.html";
+          } else {
+            window.location.href = "user-homepage.html";
+          }
+        } else {
+          alert(data.message || "Invalid credentials");
+        }
+      })
+      .catch((err) => {
+        console.error("Login error:", err);
+        alert("An error occurred during login. Try again.");
+      });
+  });
+
+  // Loading Screen Script
+  document.addEventListener("DOMContentLoaded", () => {
+    let percentage = 80;
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    const progressBar = document.getElementById("progress-bar");
+    const percentageText = document.getElementById("percentage");
+
+    const loadingInterval = setInterval(() => {
+      if (percentage < 100) {
+        percentage++;
+        progressBar.style.width = percentage + "%";
+        percentageText.textContent = percentage + "%";
+      } else {
+        clearInterval(loadingInterval);
+        loaderWrapper.style.display = "none";
+      }
+    }, 30);
+  });
+
+  // Facebook SDK Initialization
+  window.fbAsyncInit = function () {
+    FB.init({
+      xfbml: true,
+      version: "v17.0",
+    });
+  };
+
+  (function (d, s, id) {
+    if (d.getElementById(id)) return;
+    let js = d.createElement(s);
+    js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    d.head.appendChild(js);
+  })(document, "script", "facebook-jssdk");
+</script>
+</body>
+</head>
+</html>

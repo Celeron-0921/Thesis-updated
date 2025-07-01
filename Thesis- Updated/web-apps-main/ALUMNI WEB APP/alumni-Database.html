@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BET Database</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Albert+Sans:wght@400;500;700&family=Sanchez&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="alumni-Database.css" />
+</head>
+<body>
+  <div class="alumnidatabasepage">
+    <img class="Navbar" src="Navbar.png" />
+    <div class="Line1"></div>
+    <div class="label1">TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES – CAVITE</div>
+
+    <a href="alumni-Database.html"><img class="Logo" src="Logo.png" alt="University Logo" /></a>
+
+    <div class="a-l-u-m-n-i slide-in">
+      <span class="a-l-u-m-n-i-span">A</span>
+      <span class="a-l-u-m-n-i-span2">l u m n i</span>
+      <span class="d-a-t-a-b-a-s-e-span">D</span>
+      <span class="d-a-t-a-b-a-s-e-span2">A T A B A S E</span>
+    </div>
+
+    <div id="loader-wrapper">
+      <div class="loader-content">
+          <span class="loading-span">T</span>
+          <span class="loading-span2">ECHNOLOGICAL</span>
+          <span class="loading-span">U</span>
+          <span class="loading-span2">NIVERSITY OF THE</span>
+          <span class="loading-span">P</span>
+          <span class="loading-span2">HILIPPINES - </span>
+          <span class="loading-span">C</span>
+          <span class="loading-span2">AVITE</span>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="footer-text">LOADING PLEASE WAIT</div>
+      </div>
+    </div>
+
+    <button class="back-button" onclick="location.href='admin-homepage.html'"><span class="underline-slide">BACK</span></button>
+
+    <button id="openModal">Add Alumni</button>
+    <button id="printTableBtn" class="print-button">🖨️ Print Table</button>
+
+    <table id="alumniTable" style="margin-top: 20px;">
+      <thead>
+        <tr>
+          <th>First Name</th><th>Last Name</th><th>Initial</th><th>Suffix</th>
+          <th>Civil Status</th><th>Date of Birth</th><th>Maiden Name</th>
+          <th>Phone No.</th><th>Major</th><th>Year Started</th><th>Graduated</th>
+          <th>Student No.</th><th>Edit</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="filter-dropdown">
+    <button id="programFilterBtn">Program ▾</button>
+    <div class="filter-dropdown-content">
+      <div onclick="filterProgram('All')">All</div>
+      <div onclick="filterProgram('BET')">BET</div>
+      <div onclick="filterProgram('BTVTED')">BTVTED</div>
+    </div>
+  </div>
+
+  <!-- Move this OUTSIDE -->
+  <span id="rowCounter" class="row-counter">Rows: 0</span>
+
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Add Alumni Information</h2>
+      <input type="text" id="firstName" placeholder="First Name" />
+      <input type="text" id="lastName" placeholder="Last Name" />
+      <input type="text" id="initial" placeholder="Initial" />
+      <input type="text" id="suffix" placeholder="Suffix" />
+      <input type="text" id="civilStatus" placeholder="Civil Status" />
+      <input type="text" id="dateBirth" placeholder="Date of Birth" />
+      <input type="text" id="maidenName" placeholder="Maiden Name" />
+      <input type="text" id="phoneNo" placeholder="Phone No." />
+      <input type="text" id="major" placeholder="Major" />
+      <input type="text" id="yearStarted" placeholder="Year Started" />
+      <input type="text" id="graduated" placeholder="Year Graduated" />
+      <input type="text" id="studentNo" placeholder="Student No." />
+      <button id="submitAlumni">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    const storageKey = "alumniDataCSV";
+    const tbody = document.querySelector('#alumniTable tbody');
+    const modal = document.getElementById("modal");
+
+    function loadCSVData() {
+      fetch("alumni-Database.csv")
+        .then(response => response.text())
+        .then(text => {
+          const rows = text.trim().split("\n");
+          const headers = rows.shift().split(",");
+          const localData = JSON.parse(localStorage.getItem(storageKey)) || [];
+          const allData = rows.map(r => r.split(",")).concat(localData);
+          tbody.innerHTML = '';
+          allData.forEach((fields, index) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = fields.map(f => `<td contenteditable="false">${f}</td>`).join("") +
+              `<td><button onclick="toggleEdit(this, ${index})">Edit</button></td>`;
+            tbody.appendChild(tr);
+          });
+        });
+    }
+
+    function toggleEdit(btn, index) {
+      const tr = btn.closest('tr');
+      const tds = tr.querySelectorAll("td");
+      if (btn.textContent === "Edit") {
+        tds.forEach((td, i) => i < 12 && (td.contentEditable = true));
+        btn.textContent = "Save";
+      } else {
+        const updated = [];
+        tds.forEach((td, i) => i < 12 && updated.push(td.textContent.trim()));
+        const localData = JSON.parse(localStorage.getItem(storageKey)) || [];
+        localData[index - document.querySelectorAll("tr").length + localData.length + 1] = updated;
+        localStorage.setItem(storageKey, JSON.stringify(localData));
+        loadCSVData();
+      }
+    }
+
+    document.getElementById("submitAlumni").onclick = () => {
+      const fields = [
+        "firstName", "lastName", "initial", "suffix", "civilStatus",
+        "dateBirth", "maidenName", "phoneNo", "major", "yearStarted",
+        "graduated", "studentNo"
+      ].map(id => document.getElementById(id).value.trim());
+
+      if (fields.some(f => f === "")) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const localData = JSON.parse(localStorage.getItem(storageKey)) || [];
+      localData.push(fields);
+      localStorage.setItem(storageKey, JSON.stringify(localData));
+      closeModal();
+      loadCSVData();
+    };
+
+    document.getElementById("openModal").onclick = () => modal.style.display = "block";
+    document.getElementById("closeModal").onclick = closeModal;
+    window.onclick = e => e.target === modal && closeModal();
+
+    function closeModal() {
+      modal.style.display = "none";
+      modal.querySelectorAll("input").forEach(input => input.value = "");
+    }
+
+    window.onload = loadCSVData;
+
+    function printAlumniTable() {
+      window.print();
+    }
+
+    document.getElementById("printTableBtn")
+            .addEventListener("click", printAlumniTable);
+
+        // Loading Screen Script
+        document.addEventListener("DOMContentLoaded", () => {
+        let percentage = 80;
+        const loaderWrapper = document.getElementById("loader-wrapper");
+        const progressBar = document.getElementById("progress-bar");
+        const percentageText = document.getElementById("percentage");
+
+
+        const loadingInterval = setInterval(() => {
+          if (percentage < 100) {
+            percentage++;
+            progressBar.style.width = percentage + "%";
+            percentageText.textContent = percentage + "%";
+          } else {
+            clearInterval(loadingInterval);
+            loaderWrapper.style.display = "none";
+          }
+        }, 30);
+      });
+
+      function loadCSVData() {
+        fetch("alumni-Database.csv")
+          .then(response => response.text())
+          .then(text => {
+            const rows = text.trim().split("\n");
+            const headers = rows.shift().split(",");
+            const localData = JSON.parse(localStorage.getItem("alumniDataCSV")) || [];
+            const allData = rows.map(r => r.split(",")).concat(localData);
+
+            const tbody = document.querySelector('#alumniTable tbody');
+            tbody.innerHTML = '';
+
+            allData.forEach((fields, index) => {
+              const tr = document.createElement("tr");
+              tr.innerHTML = fields.map(f => `<td contenteditable="false">${f}</td>`).join("") +
+                            `<td><button onclick="toggleEdit(this, ${index})">Edit</button></td>`;
+              tbody.appendChild(tr);
+            });
+
+            updateRowCount(); // ✅ Count rows after loading
+          });
+      }
+      function filterByProgram(program) {
+        const tableRows = document.querySelectorAll("#alumniTable tbody tr");
+        tableRows.forEach(row => {
+          const text = row.textContent.toUpperCase();
+          row.style.display = text.includes(program.toUpperCase()) ? "" : "none";
+        });
+        updateRowCount(); // ✅ Count visible rows after filter
+      }
+
+      // Toggle dropdown visibility
+      document.getElementById('programFilterBtn').onclick = () => {
+        const dd = document.getElementById('programDropdown');
+        dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
+      };
+
+      function filterProgram(program) {
+        const rows = Array.from(document.querySelectorAll('#alumniTable tbody tr'));
+        let count = 0;
+
+        rows.forEach(tr => {
+          const majorCell = tr.children[8]; // 9th column: Major
+          const match = (program === 'All') || (majorCell.textContent.trim() === program);
+          tr.style.display = match ? '' : 'none';
+          if (match) count++;
+        });
+
+        document.getElementById('rowCounter').textContent = `Rows: ${count}`;
+      }
+
+
+      // Re-count on page load
+      window.onload = function() {
+        loadCSVData(); // your existing loader
+        filterProgram('All');
+      };
+      
+  document.getElementById("openPopup").addEventListener("click", async function () {
+    const data = {
+      firstname: document.querySelector('.firstname-typebox').value,
+      lastname: document.querySelector('.lastname-typebox').value,
+      initial: document.querySelector('.initialname-typebox').value,
+      username: document.querySelector('.username-typebox').value,
+      degree: document.querySelector('.degrees-typebox').value,
+      personal_email: document.querySelector('.personales-typebox').value,
+      year_started: document.getElementById('year-started').value,
+      year_graduated: document.getElementById('year-graduated').value,
+      password: document.getElementById('password').value,
+      phone_number: document.querySelector('.phonenumber-typebox').value,
+      maiden_name: document.querySelector('.maidenname-typebox').value,
+      gender: document.getElementById('gender').value,
+      civil_status: document.getElementById('civil_status').value,
+      suffix: document.querySelector('.suffix').value,
+      student_no: document.querySelector('.student').value
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert("✅ Successfully submitted to backend!");
+      } else {
+        alert("❌ Failed to submit. Server responded with status: " + response.status);
+      }
+    } catch (error) {
+      console.error("🚨 Error submitting form:", error);
+      alert("An error occurred while submitting. Check console for details.");
+    }
+  });
+
+
+  </script>
+</body>
+</html>

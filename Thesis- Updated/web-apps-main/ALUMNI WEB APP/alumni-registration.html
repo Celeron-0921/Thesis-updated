@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALUMNI | TUP - Cavite</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Albert+Sans:wght@400;500;700&family=Sanchez&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="alumni-registration.css" />
+</head>
+<body>
+  <div class="registrationpage">
+    <img class="Navbar" src="Navbar.png" />
+    <div class="frame"></div>
+    <div class="line1"></div>
+    <div class="label1">TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES – CAVITE</div>
+    
+
+    <img class="Logo" src="Logo2.png" alt="University Logo" />
+    <div class="alumni zoom-in" style="animation-delay: 0.2s">
+      <span class="alumni-span">A</span>
+      <span class="alumni-span2">LUMNI</span>
+      <span class="alumni-span">R</span>
+      <span class="alumni-span2">EGISTRATION</span>
+    </div>
+
+    <div class="reminders slide-in" style="animation-delay: 0.2s">REMINDERS</div>
+    <div class="line2 zoom-in" style="animation-delay: 0.2s"></div>
+    <div class="reminder slide-in" style="animation-delay: 0.2s">
+      Sign up today to receive your personalized Alumni Account.
+    </div>
+
+    <div class="notify slide-in" style="animation-delay: 0.2s">
+      The system will send an email to this address once your registration confirmation has been successfully reviewed for your Alumni Account.
+    </div>
+
+    <div class="consents slide-in" style="animation-delay: 0.2s">
+      Your information will be reviewed, and we will notify you once your account is ready.
+      The details you provide will also be used to update your records with the TUP-Cavite System Office of Alumni Relations.
+      <br><br>
+      <strong>Important Instructions</strong><br>
+      Please ensure that the information you submit matches the University's records to prevent delays or issues in processing your registration.
+      <br><br>
+      Once you have submitted your details, the system will review them. After verification, you will receive a notification regarding the status of your registration and the successful creation of your account.
+      <br><br>
+      All personal information submitted during registration will be securely stored and managed by the TUP-Cavite System Office of Alumni Relations. Your data will remain confidential and will not be shared with external parties, ensuring full respect for your privacy rights.
+    </div>
+
+    <div class="line3 zoom-in" style="animation-delay: 0.2s"></div>
+    <div class="line4 zoom-in" style="animation-delay: 0.2s"></div>
+    <div class="line5 zoom-in" style="animation-delay: 0.2s"></div>
+    <div class="line6 zoom-in" style="animation-delay: 0.2s"></div>
+    <div class="about-yourself slide-in" style="animation-delay: 0.2s">ABOUT YOURSELF</div>
+    <div class="certificate slide-in" style="animation-delay: 0.2s">YOUR MOST RECENT UP DEGREE/CERTIFICATE</div>
+    <div class="personal slide-in" style="animation-delay: 0.2s">PERSONAL CONTACT INFORMATION</div>
+    <div class="alumnir1 slide-in" style="animation-delay: 0.2s">Alumni User Registration</div>
+    <div class="alumnir2 slide-in" style="animation-delay: 0.2s">Technological University of the Philippines - Cavite</div>
+
+
+    <!-- First Name -->
+    <div class="first-name slide-in" style="animation-delay: 0.2s">First Name <span class="required-star">*</span></div>
+    <div class="first-name-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="firstname-typebox" placeholder="First Name" />
+    </div>
+
+    <!-- Last Name -->
+    <div class="last-name slide-in" style="animation-delay: 0.2s">Last Name <span class="required-star">*</span></div>
+    <div class="last-name-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="lastname-typebox" placeholder="Last Name" />
+    </div>
+
+    <!-- Initial -->
+    <div class="initial-name slide-in" style="animation-delay: 0.2s">Initial <span class="required-star">*</span></div>
+    <div class="initial-name-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="initialname-typebox" placeholder="Initial" />
+    </div>
+
+    <div class="user-name slide-in" style="animation-delay: 0.2s">Username <span class="required-star">*</span></div>
+    <div class="user-name-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="username-typebox" placeholder="Enter Username" />
+    </div>
+
+    <div class="degree slide-in" style="animation-delay: 0.2s">Major in. (BET/BTVTED) <span class="required-star">*</span></div>
+    <div class="degree-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="degrees-typebox" placeholder="Degree/Certificate & Major" />
+    </div>
+
+    <div class="personale slide-in" style="animation-delay: 0.2s">Personal Email Address <span class="required-star">*</span></div>
+    <div class="personale-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="personales-typebox" placeholder="Personal Email Address" />
+    </div>
+
+    <div class="retype slide-in" style="animation-delay: 0.2s">Retype Email Address <span class="required-star">*</span></div>
+    <div class="retypee-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="retypees-typebox" placeholder="Retype Email Address" />
+    </div>
+
+    <div class="year slide-in" style="animation-delay: 0.2s">Year Started <span class="required-star">*</span></div>
+    <div class="year-typebox slide-in" style="animation-delay: 0.2s">
+      <select id="year-started" class="years-typebox" required>
+        <option value="" disabled selected hidden>Select Year</option>
+      </select>
+    </div>
+
+    <div class="yearg slide-in" style="animation-delay: 0.2s">Graduated <span class="required-star">*</span></div>
+    <div class="yearg-typebox slide-in" style="animation-delay: 0.2s">
+      <select id="year-graduated" class="yearg-typebox1" required>
+        <option value="" disabled selected hidden>Select Year Graduated</option>
+      </select>
+    </div>
+
+    <label class="passwords slide-in" style="animation-delay: 0.2s">Password <span class="required-star">*</span></label>
+    <div class="password-wrapper slide-in" style="animation-delay: 0.2s">
+      <input type="password" id="password" class="password-input" placeholder="Enter Password" />
+      <span id="togglePassword" class="toggle-password">☐</span>
+    </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="phone-number slide-in" style="animation-delay: 0.2s">Phone No. <span class="required-star">*</span></div>
+    <div class="phone-number-typebox slide-in" style="animation-delay: 0.2s">
+      <input 
+        type="tel" 
+        class="phonenumber-typebox" 
+        placeholder="" 
+        pattern="[0-9]*" 
+        inputmode="numeric"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      />
+    </div>
+
+    <!-- Full name -->
+    <div class="maiden-name slide-in" style="animation-delay: 0.2s">Maiden Name <span class="required">*</span></div>
+    <div class="maiden-name-typebox slide-in" style="animation-delay: 0.2s">
+      <input type="text" class="maidenname-typebox" placeholder="Maiden Name" />
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+      <div class="loader-content">
+          <span class="loading-span">T</span>
+          <span class="loading-span2">ECHNOLOGICAL</span>
+          <span class="loading-span">U</span>
+          <span class="loading-span2">NIVERSITY OF THE</span>
+          <span class="loading-span">P</span>
+          <span class="loading-span2">HILIPPINES - </span>
+          <span class="loading-span">C</span>
+          <span class="loading-span2">AVITE</span>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="percentage" id="percentage">0%</div>
+        <div class="footer-text">LOADING PLEASE WAIT</div>
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="gender slide-in" style="animation-delay: 0.2s">Gender <span class="required-star">*</span></div>
+    <select name="gender" id="gender" required class="slide-in" style="animation-delay: 0.2s">
+      <option value="" disabled selected hidden>Select Gender</option>
+      <option value="MALE">MALE</option>
+      <option value="FEMALE">FEMALE</option>
+      <option value="TRANSFORMER">TRANSFORMER</option>
+      <option value="AVENGERS">AVENGERS</option>
+    </select>
+
+    <!-- Civil Status -->
+    <div class="civil-status slide-in" style="animation-delay: 0.2s">Civil Status <span class="required-star">*</span></div>
+    <select name="civil_status" id="civil_status" required class="slide-in" style="animation-delay: 0.2s">
+      <option value="" disabled selected hidden>Select Civil Status</option>
+      <option value="SINGLE">SINGLE</option>
+      <option value="MARRIED">MARRIED</option>
+      <option value="SEPARATED">SEPARATED</option>
+      <option value="WIDOWED">WIDOWED</option>
+      <option value="Divorced">DIVORCED</option>
+      <option value="Wasted">WASTED</option>
+    </select>
+
+    <!-- Suffix Section -->
+    <label class="label-suffix slide-in" style="animation-delay: 0.2s">
+      <input type="checkbox" id="toggleSuffix" />
+      My name does not end with a suffix. (e.g., Jr, Sr, I, II, etc.)
+    </label>
+    <div class="suffix-name slide-in" style="animation-delay: 0.2s">Suffix <span class="required">*</span></div>
+    <div class="suffix-typebox slide-in" style="animation-delay: 0.2s" id="suffixBox">
+      <input type="text" class="suffix" placeholder="Suffix" />
+    </div>
+
+    <!-- Student Number Section -->
+    <label class="label-student slide-in" style="animation-delay: 0.2s">
+      <input type="checkbox" id="toggleStudentNo" />
+      My Student No. is no longer available
+    </label>
+    <div class="student-no slide-in" style="animation-delay: 0.2s">Student No. (03**) <span class="required">*</span></div>
+    <div class="student-no-typebox slide-in" style="animation-delay: 0.2s" id="studentNoBox">
+      <input type="text" class="student" placeholder="Student No." />
+    </div>
+
+    <label class="label-privary slide-in" style="animation-delay: 0.2s">
+      <input type="checkbox" id="toggleStudentNo" />
+      I understand and agree that by clicking the Register submit button below i am deemed to have read, understood and signed this certification and data privacy consent form
+    </label>
+
+    <!-- Submit Button -->
+    <button id="openPopup" class="popup-button">Submit</button>
+
+    <!-- Popup Modal -->
+    <div id="popupModal" class="popup-modal">
+      <div class="popup-content">
+
+        <!-- Navbar -->
+        <div class="popup-navbar">
+          <img src="Logo2.png" alt="Logo" class="popup-logo" />
+          <span class="navbar-title">TUP-Cavite</span>
+          
+
+          <nav class="popup-nav">
+          </nav>
+        </div>
+
+        <!-- Message -->
+        <div class="popup-message">
+          <h2>Thank you for completing your registration.</h2>
+          <p>Your application is currently under review. Please allow some time for the verification process. You will receive a notification via the email you registered once your alumni account registration has been successfully reviewed.</p>
+
+          <!-- Inner Buttons -->
+          <button class="popup-inner-button" onclick="window.location.href='homepage.html'">Go to Homepage</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Date of Birth -->
+    <div class="dob-container">
+      <div class="dob-label slide-in" style="animation-delay: 0.2s">
+        Date of Birth <span class="required-star">*</span>
+      </div>
+      <div class="dob-selects">
+        <select id="dob-day" name="dob-day" required class="slide-in" style="animation-delay: 0.2s">
+          <option value="" disabled selected hidden>Day</option>
+        </select>
+
+        <select id="dob-month" name="dob-month" required class="slide-in" style="animation-delay: 0.2s">
+          <option value="" disabled selected hidden>Month</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="August">August</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+
+        <select id="dob-year" name="dob-year" required class="slide-in" style="animation-delay: 0.2s">
+          <option value="" disabled selected hidden>Year</option>
+        </select>
+      </div>
+    </div>
+
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle suffix field
+    const toggleSuffix = document.getElementById('toggleSuffix');
+    const suffixInput = document.querySelector('#suffixBox input');
+    const suffixLabel = document.querySelector('.suffix-name');
+    const suffixAsterisk = suffixLabel.querySelector('.required');
+
+    const toggleStudentNo = document.getElementById('toggleStudentNo');
+    const studentInput = document.querySelector('#studentNoBox input');
+    const studentLabel = document.querySelector('.student-no');
+    const studentAsterisk = studentLabel.querySelector('.required');
+
+    toggleSuffix.addEventListener('change', () => {
+      const isChecked = toggleSuffix.checked;
+      suffixInput.disabled = isChecked;
+      suffixLabel.style.color = isChecked ? 'gray' : 'black';
+      suffixAsterisk.style.color = isChecked ? 'gray' : 'red';
+    });
+
+    toggleStudentNo.addEventListener('change', () => {
+      const isChecked = toggleStudentNo.checked;
+      studentInput.disabled = isChecked;
+      studentLabel.style.color = isChecked ? 'gray' : 'black';
+      studentAsterisk.style.color = isChecked ? 'gray' : 'red';
+    });
+    // Populate DOB Day
+    const daySelect = document.getElementById("dob-day");
+    for (let i = 1; i <= 31; i++) {
+      const opt = document.createElement("option");
+      opt.value = opt.textContent = i;
+      daySelect.appendChild(opt);
+    }
+
+    // Populate DOB Year
+    const yearSelect = document.getElementById("dob-year");
+    const yearNow = new Date().getFullYear();
+    for (let y = yearNow; y >= 1900; y--) {
+      const opt = document.createElement("option");
+      opt.value = opt.textContent = y;
+      yearSelect.appendChild(opt);
+    }
+
+    // Show/Hide Maiden Name field based
+      const gender = document.getElementById('gender');
+      const civilStatus = document.getElementById('civil_status');
+      const maidenNameLabel = document.querySelector('.maiden-name');
+      const maidenNameBox = document.querySelector('.maiden-name-typebox input');
+      const maidenAsterisk = maidenNameLabel.querySelector('.required');
+
+      // Always visible, initially disabled
+      maidenNameLabel.style.display = 'block';
+      maidenNameBox.disabled = true;
+      maidenNameLabel.style.color = 'gray';
+      maidenAsterisk.style.color = 'gray';
+
+      function evaluateMaidenNameVisibility() {
+        const selectedGender = gender.value;
+        const selectedStatus = civilStatus.value;
+
+        const isAllowed =
+          selectedGender === 'FEMALE' &&
+          ['MARRIED', 'SEPARATED', 'WIDOWED'].includes(selectedStatus);
+
+        maidenNameBox.disabled = !isAllowed;
+        maidenNameLabel.style.color = isAllowed ? 'black' : 'gray';
+        maidenAsterisk.style.color = isAllowed ? 'red' : 'gray';
+      }
+
+      gender.addEventListener('change', evaluateMaidenNameVisibility);
+      civilStatus.addEventListener('change', evaluateMaidenNameVisibility);
+
+      // Password Toggle
+      const passwordInput = document.getElementById('password');
+      const togglePassword = document.getElementById('togglePassword');
+
+      togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        togglePassword.textContent = isPassword ? '🗹' : '☐';
+      });
+
+    // Populate Year Started select
+        const yearStartedSelect = document.getElementById('year-started');
+        const yearGraduatedSelect = document.getElementById('year-graduated');
+        const currentYear = new Date().getFullYear();
+
+        for (let year = currentYear; year >= 1900; year--) {
+          const optionStart = document.createElement('option');
+          optionStart.value = optionStart.textContent = year;
+          yearStartedSelect.appendChild(optionStart);
+
+          const optionGrad = document.createElement('option');
+          optionGrad.value = optionGrad.textContent = year;
+          yearGraduatedSelect.appendChild(optionGrad);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+        let percentage = 80;
+        const loaderWrapper = document.getElementById("loader-wrapper");
+        const progressBar = document.getElementById("progress-bar");
+        const percentageText = document.getElementById("percentage");
+
+
+        const loadingInterval = setInterval(() => {
+          if (percentage < 100) {
+            percentage++;
+            progressBar.style.width = percentage + "%";
+            percentageText.textContent = percentage + "%";
+          } else {
+            clearInterval(loadingInterval);
+            loaderWrapper.style.display = "none";
+          }
+        }, 30);
+      });
+
+        // Popup Modal
+        const openPopup = document.getElementById('openPopup');
+        const popupModal = document.getElementById('popupModal');
+
+        openPopup.addEventListener('click', () => {
+          popupModal.classList.add('show');
+        });
+
+        // Prevent click outside from closing it
+        window.addEventListener('click', (e) => {
+          if (e.target === popupModal) {
+            e.stopPropagation(); // Prevent closure
+          }
+        });
+        // Submit form to backend
+document.getElementById("openPopup").addEventListener("click", async function () {
+  const data = {
+    firstname: document.querySelector('.firstname-typebox').value,
+    lastname: document.querySelector('.lastname-typebox').value,
+    initial: document.querySelector('.initialname-typebox').value,
+    username: document.querySelector('.username-typebox').value,
+    degree: document.querySelector('.degrees-typebox').value,
+    personal_email: document.querySelector('.personales-typebox').value,
+    year_started: document.getElementById('year-started').value,
+    year_graduated: document.getElementById('year-graduated').value,
+    password: document.getElementById('password').value,
+    phone_number: document.querySelector('.phonenumber-typebox').value,
+    maiden_name: document.querySelector('.maidenname-typebox').value,
+    gender: document.getElementById('gender').value,
+    civil_status: document.getElementById('civil_status').value,
+    suffix: document.querySelector('.suffix').value,
+    student_no: document.querySelector('.student').value
+  };
+
+  try {
+    const response = await fetch("http://localhost:3000/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      alert("✅ Successfully submitted to backend!");
+    } else {
+      alert("❌ Failed to submit. Server responded with status: " + response.status);
+    }
+  } catch (error) {
+    console.error("🚨 Error submitting form:", error);
+    alert("An error occurred while submitting. Check console for details.");
+  }
+});
+
+  </script>
+
+</body>
+</html>
